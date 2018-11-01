@@ -1,5 +1,7 @@
 import style from "./main.css";
-const arr = [1, 2, 3];
-const iAmJavascriptES6 = () => console.log(...arr);
-window.iAmJavascriptES6 = iAmJavascriptES6;
+import {commands} from './constants/command.constant'
 
+console.log(commands.LEFT.toString())
+
+//init the matrix,
+//function place(x, y, direction) 

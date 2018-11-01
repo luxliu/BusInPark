@@ -34,5 +34,8 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     })
-  ]
+  ],
+  output: {
+    filename: '[name].[contenthash].js'
+  }
 };
