@@ -1,0 +1,45 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Dispatch</title>
+</head>
+<body>
+    <div id="app">
+        <div id="commandComp">
+            <div class="wrapper">
+                <button>PLACE</button>
+                <label>X position: </label>
+                <input value="0">
+                <label>Y position: </label>
+                <input  value="0">
+                <label>Face direction: </label>
+                <select>
+                    <option>NORTH</option>
+                    <option>SOUTH</option>
+                    <option>EAST</option>
+                    <option>WEST</option>
+                </select>
+                <button>MOVE</button>
+                <button>LEFT</button>
+                <button>RIGHT</button>
+                <button>REPORT</button>
+            </div>
+        </div>
+        <div id="executionComp">
+            <ul>
+                <li>command 1</li>
+                <li>command 2</li>
+                <li>command 3</li>
+                <li>command 4</li>
+            </ul>
+            <button>EXCUTION</button>
+        </div>
+        <div id="reportComp">
+            <textarea>Result</textarea>
+        </div>
+    </div>
+</body>
+</html>
