@@ -35,6 +35,7 @@ module.exports = {
       chunkFilename: "[id].css"
     })
   ],
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: '[name].[contenthash].js'
   }

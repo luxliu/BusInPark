@@ -10,7 +10,7 @@
     <div id="app">
         <div id="commandComp">
             <div class="wrapper">
-                <button>PLACE</button>
+                <button onclick="place()">PLACE</button>
                 <label>X position: </label>
                 <input value="0">
                 <label>Y position: </label>
@@ -22,21 +22,13 @@
                     <option>EAST</option>
                     <option>WEST</option>
                 </select>
-                <button>MOVE</button>
-                <button>LEFT</button>
-                <button>RIGHT</button>
-                <button>REPORT</button>
+                <button onclick="move()">MOVE</button>
+                <button onclick="left()">LEFT</button>
+                <button onclick="right()">RIGHT</button>
+                <button onclick="report()">REPORT</button>
             </div>
         </div>
-        <div id="executionComp">
-            <ul>
-                <li>command 1</li>
-                <li>command 2</li>
-                <li>command 3</li>
-                <li>command 4</li>
-            </ul>
-            <button>EXCUTION</button>
-        </div>
+      
         <div id="reportComp">
             <textarea>Result</textarea>
         </div>

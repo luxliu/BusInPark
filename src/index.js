@@ -1,7 +1,9 @@
 import style from "./main.css";
-import {commands} from './constants/command.constant'
-
-console.log(commands.LEFT.toString())
-
-//init the matrix,
-//function place(x, y, direction) 
+import {initPark, place, left, right, report, move } from './views/views'
+// import {directions} from './constants/direction.constant';
+window.initPark = initPark;
+window.place = place;
+window.left = left;
+window.right = right;
+window.report = report;
+window.move = move;

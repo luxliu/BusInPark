@@ -1,14 +1,14 @@
 import  {directions}  from '../constants/direction.constant'
 
 export class Bus{
-    constructor(xPosition, yPosition, derection){
+    constructor(xPosition = 0, yPosition = 0, direction = directions.NORTH){
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        this.derection = derection;
+        this.direction = direction;
     }
 
     move(distance){
-        switch (this.derection) {
+        switch (this.direction) {
             case directions.NORTH:
                 this.yPosition += distance;
                 break;
