@@ -1,4 +1,4 @@
-import { directions } from '../constants/direction.constant'
+import { Directions } from '../constants/direction.constant'
 
 export class Park {
     constructor(width = 5, length = 5) {

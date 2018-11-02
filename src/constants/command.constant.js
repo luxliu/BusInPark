@@ -1,4 +1,4 @@
-export const commands = {
+export const Commands = {
     PLACE : 'PLACE',
     MOVE : 'MOVE',
     LEFT : 'LEFT',

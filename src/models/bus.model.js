@@ -1,7 +1,7 @@
-import  {directions}  from '../constants/direction.constant'
+import  {Directions}  from '../constants/direction.constant'
 
 export class Bus{
-    constructor(xPosition = 0, yPosition = 0, direction = directions.NORTH){
+    constructor(xPosition = 0, yPosition = 0, direction = Directions.NORTH){
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.direction = direction;
@@ -9,16 +9,16 @@ export class Bus{
 
     move(distance){
         switch (this.direction) {
-            case directions.NORTH:
+            case Directions.NORTH:
                 this.yPosition += distance;
                 break;
-            case directions.SOUTH:
+            case Directions.SOUTH:
                 this.yPosition -= distance;
                 break;
-            case directions.WEST:
+            case Directions.WEST:
                 this.xPosition -= distance;
                 break;
-            case directions.EAST:
+            case Directions.EAST:
                 this.xPosition += distance;
                 break;
             default:

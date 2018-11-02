@@ -2,36 +2,41 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Bus Dispatch</title>
 </head>
+
 <body>
     <div id="app">
-        <div id="commandComp">
+        <div>
             <div class="wrapper">
                 <button onclick="place()">PLACE</button>
-                <label>X position: </label>
-                <input value="0">
-                <label>Y position: </label>
-                <input  value="0">
-                <label>Face direction: </label>
-                <select>
-                    <option>NORTH</option>
-                    <option>SOUTH</option>
-                    <option>EAST</option>
-                    <option>WEST</option>
-                </select>
-                <button onclick="move()">MOVE</button>
-                <button onclick="left()">LEFT</button>
-                <button onclick="right()">RIGHT</button>
-                <button onclick="report()">REPORT</button>
+                <div id="placeParams">
+                    <label>X position: </label>
+                    <input value="0" type="number" min="0" id="x_position">
+                    <label>Y position: </label>
+                    <input value="0" type="number" min="0" id="y_position">
+                    <label>Face direction: </label>
+                    <select id="direction">
+                        <option>NORTH</option>
+                        <option>SOUTH</option>
+                        <option>EAST</option>
+                        <option>WEST</option>
+                    </select>
+                </div>
+                <button onclick="move()" disabled class="need_init">MOVE</button>
+                <button onclick="left()" disabled class="need_init">LEFT</button>
+                <button onclick="right()" disabled class="need_init">RIGHT</button>
+                <button onclick="report()" disabled class="need_init">REPORT</button>
             </div>
         </div>
-      
-        <div id="reportComp">
-            <textarea>Result</textarea>
+
+        <div>
+            <textarea id="report" readonly></textarea>
         </div>
     </div>
 </body>
+
 </html>

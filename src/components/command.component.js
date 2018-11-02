@@ -1,9 +1,9 @@
-import { directions } from '../constants/direction.constant'
+import { Directions } from '../constants/direction.constant'
 import { Bus } from '../models/bus.model';
 
 
-const directionArray = Object.values(directions);
-export const placeBus = async function (bus, x = 0, y = 0, direction = directions.EAST) {
+const directionArray = Object.values(Directions);
+export const placeBus = async function (bus, x = 0, y = 0, direction = Directions.EAST) {
     if (!bus)
         bus = new Bus();
     bus.xPosition = x;
@@ -14,7 +14,8 @@ export const placeBus = async function (bus, x = 0, y = 0, direction = direction
 export const moveBus = async function (bus, park) {
     let virtualBus = Object.create(bus);
     virtualBus.move(1);
-    if (park.insidePark(virtualBus)) bus.move(1);
+    if (park.insidePark(virtualBus)) bus.move(1)
+    else return true;
 }
 
 export const leftBus = async function (bus) {
