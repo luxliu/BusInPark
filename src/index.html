@@ -9,34 +9,62 @@
 </head>
 
 <body>
-    <div id="app">
-        <div>
-            <div class="wrapper">
-                <button onclick="place()">PLACE</button>
-                <div id="placeParams">
-                    <label>X position: </label>
-                    <input value="0" type="number" min="0" id="x_position">
-                    <label>Y position: </label>
-                    <input value="0" type="number" min="0" id="y_position">
-                    <label>Face direction: </label>
-                    <select id="direction">
+    <div id="app" class="container jumbotron">
+        <h1 class="display-4">Hello, Bus!</h1>
+        <p class="lead">This is a simple bus dispatching simulator.</p>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <button onclick="place()" class="btn btn-primary">EMPTY PARK & PLACE A BUS</button>
+                <small class="form-text text-muted">You must place a bus before give it commands.</small>
+            </div>
+        </div>
+        <div id="placeParams" class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="x_position">X position: </label>
+                    <input type="number" class="form-control" value="0" type="number" min="0" id="x_position"
+                        placeholder="Enter X Position">
+                </div>
+            </div>
+            <div class="col">
+                <label for="y_position">Y position: </label>
+                <input type="number" class="form-control" value="0" type="number" min="0" id="y_position" placeholder="Enter Y Position">
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="direction">Face direction: </label>
+                    <select class="form-control" id="direction">
                         <option>NORTH</option>
                         <option>SOUTH</option>
                         <option>EAST</option>
                         <option>WEST</option>
                     </select>
                 </div>
-                <button onclick="move()" disabled class="need_init">MOVE</button>
-                <button onclick="left()" disabled class="need_init">LEFT</button>
-                <button onclick="right()" disabled class="need_init">RIGHT</button>
-                <button onclick="report()" disabled class="need_init">REPORT</button>
+                </select>
             </div>
         </div>
 
-        <div>
-            <textarea id="report" readonly></textarea>
+        <div class="row">
+            <div class="btn-group col-4" role="group" aria-label="Basic example">
+                <button onclick="move()" disabled class="need_init btn btn-info">MOVE</button>
+                <button onclick="left()" disabled class="need_init btn btn-info">LEFT</button>
+                <button onclick="right()" disabled class="need_init btn btn-info">RIGHT</button>
+            </div>
+            <div class="col-8">
+                <button onclick="report()" disabled class="need_init btn btn-success">REPORT</button>
+            </div>
         </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="report">Command Results: </label>
+                    <textarea class="form-control" id="report" rows="8" readonly></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="alert"></div>
     </div>
 </body>
-
 </html>

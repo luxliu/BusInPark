@@ -31,5 +31,5 @@ export const rightBus = async function (bus) {
 }
 
 export const reportBus = async function (bus) {
-    return `Bus is at ( ${bus.xPosition},${bus.yPosition} ) and facing ${bus.direction}`;
+    return `Bus is at ( ${bus.xPosition},${bus.yPosition} ) and facing ${bus.direction};`;
 }

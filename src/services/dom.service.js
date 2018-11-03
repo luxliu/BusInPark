@@ -18,8 +18,11 @@ export const getValue = (domId) => {
 export const emptyValue = (domId) => {
     if(domId){
         const ele = document.getElementById(domId);
-        if(ele)
+        if(ele){
             ele.value = '';
+            ele.innerHTML = '';
+        }
+            
     }
 }
 
@@ -49,4 +52,18 @@ export const enableBtn = (btnId) => {
         if(btn)
             ele.removeAttribute('disabled');
     }
+}
+
+export const appendAlert = (divId, alertMsg) => {
+    if(divId){
+        const ele = document.getElementById(divId);
+        if(ele)
+            ele.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error!</strong> ${alertMsg}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+    }
+
 }
