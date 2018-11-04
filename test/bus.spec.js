@@ -7,7 +7,7 @@ let Bus = require(path.join(__dirname, '../src/models', 'bus.model.js')).Bus;
 let Directions = require(path.join(__dirname, '../src/constants', 'direction.constant.js')).Directions;
 
 describe('Bus', () => {
-    describe('#xPosition', () => {
+    describe('#properties', () => {
       let bus;
   
       beforeEach(() => {
@@ -58,5 +58,18 @@ describe('Bus', () => {
         }).should.throw(Error);
       });
 
+    });
+
+    describe('#functions', () => {
+      let bus;
+  
+      beforeEach(() => {
+        bus = new Bus(1, 2, Directions.NORTH);
+      });
+
+      it('bus can be moved', () => {
+        bus.move(2);
+        bus.yPosition.should.equal(4);
+      });
     })
 });

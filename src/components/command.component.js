@@ -1,8 +1,6 @@
-import { Directions } from '../constants/direction.constant'
+import { Directions,DirectionArray } from '../constants/direction.constant'
 import { Bus } from '../models/bus.model';
 
-
-const directionArray = Object.values(Directions);
 export const placeBus = async function (bus, x = 0, y = 0, direction = Directions.EAST) {
     if (!bus)
         bus = new Bus();
@@ -19,15 +17,15 @@ export const moveBus = async function (bus, park) {
 }
 
 export const leftBus = async function (bus) {
-    const index = directionArray.indexOf(bus.direction);
-    const targetDirection = index === 0 ? directionArray[directionArray.length - 1] : directionArray[index - 1];
-    bus.changeDirection(targetDirection);
+    const index = DirectionArray.indexOf(bus.direction);
+    const targetDirection = index === 0 ? DirectionArray[DirectionArray.length - 1] : DirectionArray[index - 1];
+    bus.direction = targetDirection;
 }
 
 export const rightBus = async function (bus) {
-    const index = directionArray.indexOf(bus.direction);
-    const targetDirection = index === directionArray.length - 1 ? directionArray[0] : directionArray[index + 1];
-    bus.changeDirection(targetDirection);
+    const index = DirectionArray.indexOf(bus.direction);
+    const targetDirection = index === DirectionArray.length - 1 ? DirectionArray[0] : DirectionArray[index + 1];
+    bus.direction = targetDirection;
 }
 
 export const reportBus = async function (bus) {

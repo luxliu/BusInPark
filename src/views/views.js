@@ -20,7 +20,7 @@ export const place = () => {
     let y = parseInt(getValue('y_position'));
     let direction = getValue('direction');
     
-    if(!validInput(x,y,direction)) return;
+    if(!validInput(x,y,direction)) return false;
     emptyValue('alert');
 
     placeBus(oneBus, x, y, direction).then(() => {

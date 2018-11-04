@@ -1,4 +1,4 @@
-import  {Directions}  from '../constants/direction.constant'
+import  {Directions,DirectionArray}  from '../constants/direction.constant'
 
 export class Bus{
     constructor(xPosition = 0, yPosition = 0, direction = Directions.NORTH){
@@ -33,10 +33,8 @@ export class Bus{
     }
 
     set direction(value) {
-        var vals = Object.keys(Directions).map(function(key) {
-            return Directions[key];
-        });
-        if (!vals.includes(value)) {
+        
+        if (!DirectionArray.includes(value)) {
           throw new Error('"direction" must be one of North, South, East and West.');
         }
         this._direction = value;
@@ -60,11 +58,4 @@ export class Bus{
                 break;
         }
     }
-
-    changeDirection(direction){
-        this.direction = direction;
-    }
-
-
-
 }

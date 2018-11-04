@@ -4,3 +4,5 @@ export const Directions = {
     SOUTH : 'SOUTH',
     WEST : 'WEST',
 }
+
+export const DirectionArray = ['NORTH','EAST','SOUTH','WEST'];
