@@ -1,4 +1,4 @@
-import style from "./main.css";
+import style from './main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {place, left, right, report, move } from './views/views';
 
