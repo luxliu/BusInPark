@@ -1,10 +1,11 @@
-
+import {drawPark} from '../services/dom.service';
 export class Park {
     constructor(width = 5, length = 5) {
         const columns = Array.from(Array(length).keys());
         this._matrix = Array.from(Array(width), () => [].slice.call(columns));
         this._width = width;
         this._length = length;
+        drawPark('park',this._width, this._length)
     }
 
     get width(){

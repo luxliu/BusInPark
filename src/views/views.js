@@ -1,9 +1,9 @@
-import { Directions } from '../constants/direction.constant'
+import { Directions, DirectionArray } from '../constants/direction.constant'
 import { placeBus, leftBus, rightBus, moveBus, reportBus } from '../components/command.component'
 import { Displays } from '../constants/display.constant';
 import { Park } from '../models/park.model';
 import { Bus } from '../models/bus.model';
-import { appendText, getValue, emptyValue, appendAlert, enableBtnsByClass } from '../services/dom.service';
+import { appendText, getValue, emptyValue, appendAlert, enableBtnsByClass, drawBus } from '../services/dom.service';
 
 const oneBus = new Bus();
 const onePark = new Park();
@@ -28,6 +28,7 @@ export const place = () => {
         const log = Displays.PLACE + `(${oneBus.xPosition} , ${oneBus.yPosition});`
         //append log to result textarea DOM
         appendText('report', log);
+        drawBus('park',onePark.length,oneBus);
         //enable btns
         enableBtnsByClass('need_init');
 
@@ -39,6 +40,7 @@ export const left = () => {
         const log = Displays.LEFT;
         //append log to result textarea DOM
         appendText('report', '\n' + log);
+        drawBus('park',onePark.length,oneBus);
     }).catch(err => { console.error(err) })
 }
 
@@ -47,6 +49,7 @@ export const right = () => {
         const log = Displays.RIGHT;
         //append log to result textarea DOM
         appendText('report', '\n' + log);
+        drawBus('park',onePark.length,oneBus);
     }).catch(err => { console.error(err) })
 }
 
@@ -56,6 +59,7 @@ export const move = () => {
         let log = Displays.MOVE;
         if (stopped) log = Displays.STOPPED;
         appendText('report', '\n' + log);
+        drawBus('park',onePark.length,oneBus);
         //append log to result textarea DOM
     }).catch(err => { console.error(err) })
 }

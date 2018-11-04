@@ -3,3 +3,19 @@
         font-size: 20px;
     }
 }
+
+#park_wrapper{
+    table{
+        width:50%;
+        margin:auto;
+        tr,td{
+            border:2px solid grey;
+        }
+        td{
+            padding:50px;
+            &.bus{
+                background-color: green;
+            }
+        }
+    }
+}
