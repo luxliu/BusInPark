@@ -6,3 +6,5 @@ export const Directions = {
 }
 
 export const DirectionArray = ['NORTH','EAST','SOUTH','WEST'];
+
+export const BusHeadArray = ['top','right','bottom','left'];

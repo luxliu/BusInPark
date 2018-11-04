@@ -5,7 +5,7 @@ import { Park } from '../models/park.model';
 import { Bus } from '../models/bus.model';
 import { appendText, getValue, emptyValue, appendAlert, showBtnsByClass, drawBus } from '../services/dom.service';
 
-const oneBus = new Bus();
+let oneBus = null;
 const onePark = new Park();
 
 export const initPark = () => {
@@ -22,7 +22,7 @@ export const place = () => {
     
     if(!validInput(x,y,direction)) return false;
     emptyValue('alert');
-
+    oneBus = new Bus();
     placeBus(oneBus, x, y, direction).then(() => {
         emptyValue('report');
         const log = Displays.PLACE + `(${oneBus.xPosition} , ${oneBus.yPosition});`
@@ -30,12 +30,17 @@ export const place = () => {
         appendText('report', log);
         drawBus('park',onePark.length,oneBus);
         //enable btns
-        showBtnsByClass('need_init');
+        // showBtnsByClass('need_init');
 
     }).catch(err => { console.error(err) })
 }
 
 export const left = () => {
+    if(!oneBus){
+        noBusAlert();
+        return;
+    }
+        
     leftBus(oneBus).then(() => {
         const log = Displays.LEFT;
         //append log to result textarea DOM
@@ -45,6 +50,10 @@ export const left = () => {
 }
 
 export const right = () => {
+    if(!oneBus){
+        noBusAlert();
+        return;
+    }
     rightBus(oneBus).then(() => {
         const log = Displays.RIGHT;
         //append log to result textarea DOM
@@ -54,6 +63,10 @@ export const right = () => {
 }
 
 export const move = () => {
+    if(!oneBus){
+        noBusAlert();
+        return;
+    }
     moveBus(oneBus, onePark).then(stopped => {
         console.log(oneBus.yPosition)
         let log = Displays.MOVE;
@@ -65,6 +78,10 @@ export const move = () => {
 }
 
 export const report = () => {
+    if(!oneBus){
+        noBusAlert();
+        return;
+    }
     reportBus(oneBus).then(report => {
         //append report to report DOM
         appendText('report', '\n' + report);
@@ -90,4 +107,8 @@ const validInput = (x,y,direction) => {
     }
 
     return true;
+}
+
+const noBusAlert = () =>{
+    appendAlert('alert', Displays.NOBUS);
 }

@@ -7,4 +7,5 @@ export const Displays = {
     OUTOFPARK: 'You can\'t put bus outside of park.',
     POSITIONNAN: 'You can\'t input non-number x or y position.',
     DIRECTIONERROR:'Direction must be one of "North", "South", "East", and "West".',
+    NOBUS:'You must place a bus before give it commands.'
 }

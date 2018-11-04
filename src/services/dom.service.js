@@ -1,4 +1,4 @@
-import { DirectionArray } from "../constants/direction.constant";
+import { DirectionArray,BusHeadArray } from "../constants/direction.constant";
 
 export const appendText = (domId,text) => {
     if(domId){
@@ -86,38 +86,22 @@ export const drawPark = async (tableId,width,length) => {
     }
 }
 
+const removeBus = td => {
+    td.classList.remove('bus');
+    td.style[`border`] = '2px solid grey';
+}
+
 export const drawBus = async (tableId, length, bus) =>{
     if(tableId){
         const table = document.getElementById(tableId);
         if(table && table.innerHTML){
-            Array.from(table.getElementsByTagName('td')).forEach(td=>{
-                td.classList.remove('bus');
-                td.style[`border`] = '2px solid grey';
-            })
+            Array.from(table.getElementsByTagName('td')).forEach(removeBus);
             const trIndex = length - bus.yPosition - 1;
             const tdIndex = bus.xPosition;
             const tr = table.getElementsByTagName('tr')[trIndex],
                   td = tr.getElementsByTagName('td')[tdIndex];
             td.classList.add('bus');
-            let busHead = '';
-            const directionIndex = DirectionArray.indexOf(bus.direction);
-            switch (directionIndex) {
-                case 0:
-                    busHead = 'top';
-                    break;
-                 case 1:
-                    busHead = 'right';
-                    break;
-                case 2:
-                    busHead = 'bottom';
-                    break;
-                case 3:
-                    busHead = 'left';
-                    break;
-                default:
-                    break;
-            };
-            
+            let busHead = BusHeadArray[DirectionArray.indexOf(bus.direction)];
             td.style[`border-${busHead}`] = '10px solid yellow';
         }
     }
