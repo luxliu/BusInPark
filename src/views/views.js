@@ -3,16 +3,18 @@ import { placeBus, leftBus, rightBus, moveBus, reportBus } from '../components/c
 import { Displays } from '../constants/display.constant';
 import { Park } from '../models/park.model';
 import { Bus } from '../models/bus.model';
-import { appendText, getValue, emptyValue, appendAlert, showBtnsByClass, drawBus } from '../services/dom.service';
+import { appendText, getValue, emptyValue, appendAlert, showBtnsByClass, drawBus,drawPark } from '../services/dom.service';
 
 let oneBus = null;
-const onePark = new Park();
+let onePark = null;
 
 export const initPark = () => {
     //get x,y from DOM and init park
-
+    onePark = new Park();
+    drawPark('park',onePark.width, onePark.length);
 }
 
+initPark();
 
 export const place = () => {
     //get x,y and direction from DOM
