@@ -13,12 +13,6 @@
         <h1 class="display-4">Hello, Bus!</h1>
         <p class="lead">This is a simple bus dispatching simulator.</p>
         <hr class="my-4">
-        <div class="row">
-            <div class="col">
-                <button onclick="place()" class="btn btn-primary">EMPTY PARK & PLACE A BUS</button>
-                <small class="form-text text-muted">You must place a bus before give it commands.</small>
-            </div>
-        </div>
         <div id="placeParams" class="row">
             <div class="col">
                 <div class="form-group">
@@ -43,16 +37,24 @@
                 </div>
                 </select>
             </div>
+            
         </div>
-
+        <div class="row">
+            <div class="col">
+                <button onclick="place()" class="btn btn-primary">EMPTY PARK & PLACE A BUS</button>
+                <small class="form-text text-muted">You must place a bus before give it commands.</small>
+            </div>
+           
+        </div>
+        <div id="alert"></div>
         <div class="row">
             <div class="btn-group col-4" role="group" aria-label="Basic example">
-                <button onclick="move()" disabled class="need_init btn btn-info">MOVE</button>
-                <button onclick="left()" disabled class="need_init btn btn-info">LEFT</button>
-                <button onclick="right()" disabled class="need_init btn btn-info">RIGHT</button>
+                <button onclick="move()" class="need_init btn btn-info hide">MOVE</button>
+                <button onclick="left()" class="need_init btn btn-info hide">LEFT</button>
+                <button onclick="right()" class="need_init btn btn-info hide">RIGHT</button>
             </div>
-            <div class="col-8">
-                <button onclick="report()" disabled class="need_init btn btn-success">REPORT</button>
+            <div class="col">
+                <button onclick="report()" class="need_init btn btn-success hide">REPORT</button>
             </div>
         </div>
         <hr class="my-4">
@@ -69,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div id="alert"></div>
+        
        
     </div>
 </body>

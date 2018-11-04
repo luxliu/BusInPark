@@ -4,6 +4,12 @@
     }
 }
 
+.hide{
+    display:none !important;
+}
+#alert{
+    margin-bottom: 20px;
+}
 #park_wrapper{
     table{
         width:50%;
@@ -12,7 +18,7 @@
             border:2px solid grey;
         }
         td{
-            padding:50px;
+            padding:30px;
             &.bus{
                 background-color: green;
             }

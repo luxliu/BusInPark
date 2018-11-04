@@ -41,12 +41,12 @@ export const disableBtnsByClass = (btnsClass) => {
     }
 }
 
-export const enableBtnsByClass = (btnsClass) => {
+export const showBtnsByClass = (btnsClass) => {
     if(btnsClass){
         const btns = Array.from(document.getElementsByClassName(btnsClass));
         if(btns)
             btns.forEach(ele => {
-                ele.removeAttribute('disabled');
+                ele.classList.remove('hide');
             }); 
     }
 }
@@ -77,7 +77,7 @@ export const drawPark = async (tableId,width,length) => {
             for(let i = 0; i< length; i++ ){
                 let td = ``;
                 for(let j = 0; j< width; j++){
-                    td += `<td>(${j},${length - i - 1})</td>`;
+                    td += `<td><div>(${j},${length - i - 1})</div></td>`;
                 }
                 table.innerHTML += `<tr>${td}</tr>`;
             }

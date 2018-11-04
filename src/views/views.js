@@ -3,7 +3,7 @@ import { placeBus, leftBus, rightBus, moveBus, reportBus } from '../components/c
 import { Displays } from '../constants/display.constant';
 import { Park } from '../models/park.model';
 import { Bus } from '../models/bus.model';
-import { appendText, getValue, emptyValue, appendAlert, enableBtnsByClass, drawBus } from '../services/dom.service';
+import { appendText, getValue, emptyValue, appendAlert, showBtnsByClass, drawBus } from '../services/dom.service';
 
 const oneBus = new Bus();
 const onePark = new Park();
@@ -30,7 +30,7 @@ export const place = () => {
         appendText('report', log);
         drawBus('park',onePark.length,oneBus);
         //enable btns
-        enableBtnsByClass('need_init');
+        showBtnsByClass('need_init');
 
     }).catch(err => { console.error(err) })
 }
