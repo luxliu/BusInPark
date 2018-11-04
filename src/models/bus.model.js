@@ -2,9 +2,44 @@ import  {Directions}  from '../constants/direction.constant'
 
 export class Bus{
     constructor(xPosition = 0, yPosition = 0, direction = Directions.NORTH){
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
-        this.direction = direction;
+        this._xPosition = xPosition;
+        this._yPosition = yPosition;
+        this._direction = direction;
+    }
+    
+    get xPosition(){
+        return this._xPosition;
+    }
+    set xPosition(value) {
+        if (typeof value !== 'number') {
+          throw new Error('"xPosition" must be a number.');
+        }
+        this._xPosition = value;
+    }
+
+    get yPosition(){
+        return this._yPosition;
+    }
+
+    set yPosition(value) {
+        if (typeof value !== 'number') {
+          throw new Error('"yPosition" must be a number.');
+        }
+        this._yPosition = value;
+    }
+
+    get direction(){
+        return this._direction;
+    }
+
+    set direction(value) {
+        var vals = Object.keys(Directions).map(function(key) {
+            return Directions[key];
+        });
+        if (!vals.includes(value)) {
+          throw new Error('"direction" must be one of North, South, East and West.');
+        }
+        this._direction = value;
     }
 
     move(distance){

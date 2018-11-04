@@ -76,7 +76,11 @@ const validInput = (x,y,direction) => {
         appendAlert('alert', Displays.OUTOFPARK);
         return false;
     }
-    if (!Object.values(Directions).includes(direction)) {
+
+    var vals = Object.keys(Directions).map(function(key) {
+        return Directions[key];
+    });
+    if (!vals.includes(direction)) {
         appendAlert('alert', Displays.DIRECTIONERROR);
         return false;
     }
