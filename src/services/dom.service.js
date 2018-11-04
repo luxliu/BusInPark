@@ -1,8 +1,11 @@
 export const appendText = (domId,text) => {
     if(domId){
         const ele = document.getElementById(domId);
-        if(ele)
+        if(ele){
             ele.value += text;
+            ele.scrollTop = ele.scrollHeight;
+        }
+           
     }
 }
 
